@@ -921,6 +921,7 @@ namespace WinAuth
 								{
 									PictureBox imageBox = FindControl<PictureBox>(tradePanel, "tradeImage");
 									imageBox.Image = Image.FromStream(ms);
+									imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
 								}
 							}
 						}
