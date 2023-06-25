@@ -1196,7 +1196,7 @@ namespace WinAuth
 			{
 				string html = JObject.Parse(response).SelectToken("html").Value<string>();
 
-				Regex detailsRegex = new Regex(@"(.*<body[^>]*>\s*<div\s+class=""[^""]+"">).*(</div>.*?</body>\s*</html>)", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+				Regex detailsRegex = new Regex(@"<div class=""mobileconf_trade_area"">(.*?)</div>\s*</div>(.*?)\r?\n\r?\n\t<div class=""tradeoffer""", RegexOptions.Singleline | RegexOptions.IgnoreCase);
 				var match = detailsRegex.Match(this.ConfirmationsHtml);
 				if (match.Success == true)
 				{
